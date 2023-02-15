@@ -11,8 +11,7 @@ console.log(toDoData);
 const render = function(){
 	todoList.innerHTML = ''
 	todoCompleted.innerHTML = ''
-	 
-
+	
 	toDoData.forEach(function(item,index){
 
 	const li = document.createElement('li')
@@ -33,8 +32,9 @@ const render = function(){
 		item.completed = !item.completed
 		render()
 	})
-//удаление по корзине
+	//удаление по корзине
 	li.querySelector('.todo-remove').addEventListener('click',function(){
+		//если в массиве есть item,то удаляем из массива 1 элемент
 		if(toDoData.includes(item)){
 			toDoData.splice(index,1)
 			li.remove()
